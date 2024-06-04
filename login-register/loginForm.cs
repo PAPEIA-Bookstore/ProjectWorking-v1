@@ -16,10 +16,9 @@ namespace login_register
     {
         private User User;
 
-        public loginForm(User User)
+        public loginForm()
         {
             InitializeComponent();
-            this.User = User;
         }
 
         private void loginForm_Load(object sender, EventArgs e)

@@ -31,6 +31,7 @@ namespace login_register
                     NpgsqlDataReader dataReader = command.ExecuteReader();
 
                     bool usernameExists = dataReader.HasRows;
+                    dataReader.Close();
                     //  Check for username uniqueness
                     if (!usernameExists)
                     {
@@ -68,7 +69,6 @@ namespace login_register
 
                                 ContainerForm containerForm = new ContainerForm(User);
                                 containerForm.Show();
-                                this.Close();
                             }
                             else
                             {
@@ -92,8 +92,8 @@ namespace login_register
                         textBoxUserName.Focus();
                     }
 
-                    dataReader.Close();
                     DBHandler.CloseConnection(connection, command);
+
                 }
                 else
                 {
@@ -128,7 +128,7 @@ namespace login_register
 
         private void label6_Click(object sender, EventArgs e)
         {
-            new loginForm(User).Show();
+            new loginForm().Show();
             this.Hide();
         }
 

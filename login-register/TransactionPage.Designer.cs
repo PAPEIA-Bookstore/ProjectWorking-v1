@@ -313,7 +313,6 @@
             postalCodeTextBox.Font = new Font("Candara", 12F);
             postalCodeTextBox.Location = new Point(202, 446);
             postalCodeTextBox.Name = "postalCodeTextBox";
-            postalCodeTextBox.PasswordChar = '*';
             postalCodeTextBox.Size = new Size(89, 27);
             postalCodeTextBox.TabIndex = 28;
             // 
