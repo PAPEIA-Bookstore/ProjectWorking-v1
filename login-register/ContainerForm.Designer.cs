@@ -72,7 +72,7 @@
             exitButton.FlatStyle = FlatStyle.Flat;
             exitButton.Font = new Font("Consolas", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             exitButton.ForeColor = Color.PapayaWhip;
-            exitButton.Location = new Point(1033, 21);
+            exitButton.Location = new Point(1209, 21);
             exitButton.Name = "exitButton";
             exitButton.Size = new Size(35, 35);
             exitButton.TabIndex = 27;
@@ -82,10 +82,11 @@
             // 
             // panel1
             // 
+            panel1.AutoScroll = true;
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 84);
+            panel1.Location = new Point(0, 77);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1089, 608);
+            panel1.Size = new Size(1273, 716);
             panel1.TabIndex = 29;
             // 
             // panel2
@@ -99,7 +100,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1089, 84);
+            panel2.Size = new Size(1273, 84);
             panel2.TabIndex = 30;
             // 
             // bookLand
@@ -107,7 +108,7 @@
             bookLand.BackColor = Color.Tan;
             bookLand.Cursor = Cursors.Hand;
             bookLand.Image = Properties.Resources.text_1717247010360;
-            bookLand.Location = new Point(380, 21);
+            bookLand.Location = new Point(469, 21);
             bookLand.Name = "bookLand";
             bookLand.Size = new Size(329, 50);
             bookLand.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -121,7 +122,7 @@
             loginOrRegister.Cursor = Cursors.Hand;
             loginOrRegister.Font = new Font("Candara", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             loginOrRegister.ForeColor = Color.PapayaWhip;
-            loginOrRegister.Location = new Point(901, 30);
+            loginOrRegister.Location = new Point(1077, 30);
             loginOrRegister.Name = "loginOrRegister";
             loginOrRegister.Size = new Size(107, 26);
             loginOrRegister.TabIndex = 29;
@@ -133,7 +134,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.PapayaWhip;
-            ClientSize = new Size(1089, 692);
+            ClientSize = new Size(1273, 793);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;

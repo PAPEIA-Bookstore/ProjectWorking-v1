@@ -60,9 +60,9 @@
             // 
             coverPictureBox.BackgroundImageLayout = ImageLayout.None;
             coverPictureBox.Image = Properties.Resources._71wM_BB9mtL__AC_UF1000_1000_QL80_;
-            coverPictureBox.Location = new Point(27, 24);
+            coverPictureBox.Location = new Point(66, 13);
             coverPictureBox.Name = "coverPictureBox";
-            coverPictureBox.Size = new Size(189, 282);
+            coverPictureBox.Size = new Size(226, 339);
             coverPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             coverPictureBox.TabIndex = 0;
             coverPictureBox.TabStop = false;
@@ -71,7 +71,7 @@
             // 
             bookTitle.AutoSize = true;
             bookTitle.Font = new Font("Candara", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bookTitle.Location = new Point(235, 24);
+            bookTitle.Location = new Point(311, 31);
             bookTitle.Name = "bookTitle";
             bookTitle.Size = new Size(67, 33);
             bookTitle.TabIndex = 1;
@@ -82,7 +82,7 @@
             plotText.BackColor = Color.PapayaWhip;
             plotText.BorderStyle = BorderStyle.None;
             plotText.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            plotText.Location = new Point(242, 131);
+            plotText.Location = new Point(318, 138);
             plotText.Name = "plotText";
             plotText.Size = new Size(374, 134);
             plotText.TabIndex = 2;
@@ -92,7 +92,7 @@
             // 
             authorLabel.AutoSize = true;
             authorLabel.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            authorLabel.Location = new Point(242, 57);
+            authorLabel.Location = new Point(318, 64);
             authorLabel.Name = "authorLabel";
             authorLabel.Size = new Size(94, 19);
             authorLabel.TabIndex = 3;
@@ -102,7 +102,7 @@
             // 
             isbnLabel.AutoSize = true;
             isbnLabel.Font = new Font("Candara", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            isbnLabel.Location = new Point(242, 291);
+            isbnLabel.Location = new Point(318, 298);
             isbnLabel.Name = "isbnLabel";
             isbnLabel.Size = new Size(41, 15);
             isbnLabel.TabIndex = 4;
@@ -112,7 +112,7 @@
             // 
             categoryLabel.AutoSize = true;
             categoryLabel.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            categoryLabel.Location = new Point(242, 93);
+            categoryLabel.Location = new Point(318, 100);
             categoryLabel.Name = "categoryLabel";
             categoryLabel.Size = new Size(140, 19);
             categoryLabel.TabIndex = 5;
@@ -124,9 +124,9 @@
             forumButton.FlatStyle = FlatStyle.Flat;
             forumButton.Font = new Font("Candara", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             forumButton.ForeColor = Color.PapayaWhip;
-            forumButton.Location = new Point(27, 322);
+            forumButton.Location = new Point(66, 378);
             forumButton.Name = "forumButton";
-            forumButton.Size = new Size(189, 36);
+            forumButton.Size = new Size(226, 36);
             forumButton.TabIndex = 6;
             forumButton.Text = "Visit Forum 🗨";
             forumButton.UseVisualStyleBackColor = false;
@@ -138,9 +138,9 @@
             buyButton.FlatStyle = FlatStyle.Flat;
             buyButton.Font = new Font("Candara", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buyButton.ForeColor = Color.PapayaWhip;
-            buyButton.Location = new Point(242, 322);
+            buyButton.Location = new Point(311, 378);
             buyButton.Name = "buyButton";
-            buyButton.Size = new Size(298, 36);
+            buyButton.Size = new Size(226, 36);
             buyButton.TabIndex = 7;
             buyButton.Text = "Buy: 15,99€";
             buyButton.UseVisualStyleBackColor = false;
@@ -148,20 +148,24 @@
             // 
             // reviewsPanel
             // 
+            reviewsPanel.AutoScroll = true;
             reviewsPanel.BackColor = Color.FromArgb(73, 60, 52);
-            reviewsPanel.Location = new Point(0, 408);
+            reviewsPanel.Dock = DockStyle.Bottom;
+            reviewsPanel.FlowDirection = FlowDirection.TopDown;
+            reviewsPanel.Location = new Point(0, 456);
             reviewsPanel.Name = "reviewsPanel";
-            reviewsPanel.Size = new Size(1090, 197);
+            reviewsPanel.Size = new Size(1273, 260);
             reviewsPanel.TabIndex = 8;
             // 
             // reviewsLabel
             // 
             reviewsLabel.AutoSize = true;
             reviewsLabel.BackColor = Color.FromArgb(73, 60, 52);
+            reviewsLabel.Dock = DockStyle.Bottom;
             reviewsLabel.FlatStyle = FlatStyle.Flat;
             reviewsLabel.Font = new Font("Candara", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             reviewsLabel.ForeColor = Color.PapayaWhip;
-            reviewsLabel.Location = new Point(0, 381);
+            reviewsLabel.Location = new Point(0, 423);
             reviewsLabel.Name = "reviewsLabel";
             reviewsLabel.Size = new Size(111, 33);
             reviewsLabel.TabIndex = 9;
@@ -171,7 +175,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Candara", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(706, 24);
+            label1.Location = new Point(782, 31);
             label1.Name = "label1";
             label1.Size = new Size(173, 26);
             label1.TabIndex = 10;
@@ -182,9 +186,9 @@
             reviewText.BackColor = Color.PapayaWhip;
             reviewText.BorderStyle = BorderStyle.FixedSingle;
             reviewText.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            reviewText.Location = new Point(706, 167);
+            reviewText.Location = new Point(782, 174);
             reviewText.Name = "reviewText";
-            reviewText.Size = new Size(319, 121);
+            reviewText.Size = new Size(319, 169);
             reviewText.TabIndex = 11;
             reviewText.Text = "";
             // 
@@ -194,9 +198,9 @@
             postReviewButton.FlatStyle = FlatStyle.Flat;
             postReviewButton.Font = new Font("Candara", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             postReviewButton.ForeColor = Color.PapayaWhip;
-            postReviewButton.Location = new Point(706, 322);
+            postReviewButton.Location = new Point(782, 378);
             postReviewButton.Name = "postReviewButton";
-            postReviewButton.Size = new Size(319, 36);
+            postReviewButton.Size = new Size(226, 36);
             postReviewButton.TabIndex = 12;
             postReviewButton.Text = "Post";
             postReviewButton.UseVisualStyleBackColor = false;
@@ -206,7 +210,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Candara", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label2.Location = new Point(706, 53);
+            label2.Location = new Point(782, 60);
             label2.Name = "label2";
             label2.Size = new Size(66, 23);
             label2.TabIndex = 13;
@@ -216,7 +220,7 @@
             // star1
             // 
             star1.Image = Properties.Resources.star_empty;
-            star1.Location = new Point(706, 105);
+            star1.Location = new Point(782, 112);
             star1.Name = "star1";
             star1.Size = new Size(30, 30);
             star1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -227,7 +231,7 @@
             // star5
             // 
             star5.Image = Properties.Resources.star_empty;
-            star5.Location = new Point(813, 105);
+            star5.Location = new Point(889, 112);
             star5.Name = "star5";
             star5.Size = new Size(30, 30);
             star5.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -238,7 +242,7 @@
             // star4
             // 
             star4.Image = Properties.Resources.star_empty;
-            star4.Location = new Point(786, 105);
+            star4.Location = new Point(862, 112);
             star4.Name = "star4";
             star4.Size = new Size(30, 30);
             star4.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -249,7 +253,7 @@
             // star3
             // 
             star3.Image = Properties.Resources.star_empty;
-            star3.Location = new Point(760, 105);
+            star3.Location = new Point(836, 112);
             star3.Name = "star3";
             star3.Size = new Size(30, 30);
             star3.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -260,7 +264,7 @@
             // star2
             // 
             star2.Image = Properties.Resources.star_empty;
-            star2.Location = new Point(733, 105);
+            star2.Location = new Point(809, 112);
             star2.Name = "star2";
             star2.Size = new Size(30, 30);
             star2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -272,8 +276,9 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             BackColor = Color.PapayaWhip;
-            ClientSize = new Size(1089, 605);
+            ClientSize = new Size(1273, 716);
             Controls.Add(star2);
             Controls.Add(star3);
             Controls.Add(star4);

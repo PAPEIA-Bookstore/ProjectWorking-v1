@@ -36,7 +36,7 @@
             forumLabel1.AutoSize = true;
             forumLabel1.Font = new Font("Verdana", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             forumLabel1.ForeColor = Color.FromArgb(73, 60, 52);
-            forumLabel1.Location = new Point(83, 62);
+            forumLabel1.Location = new Point(12, 9);
             forumLabel1.Name = "forumLabel1";
             forumLabel1.Size = new Size(144, 42);
             forumLabel1.TabIndex = 0;
@@ -47,7 +47,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.PapayaWhip;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1273, 716);
             Controls.Add(forumLabel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Forum";

@@ -80,6 +80,7 @@ namespace login_register
 
         }
 
+        //opens pic
         private void PicBox_Click(object sender, EventArgs e, Book book)
         {
             BookPage bp = new BookPage(book, this.containerForm);
