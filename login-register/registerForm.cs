@@ -61,16 +61,19 @@ namespace login_register
                                 textBoxConfPassword.Clear();
 
                                 MessageBox.Show("Your account has been successfully created!", "Registration Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                DBHandler.CloseConnection(connection, command);
+                               
+                               // DBHandler.CloseConnection(connection, command);
 
                                 User.SetUsername(username);
                                 User.SetFullName(fullName);
                                 User.SetProfilePic(prof_pic);
                                 User.SetAuthor(is_author);
 
-                                ContainerForm containerForm = new ContainerForm(User);
-                                containerForm.Show();
-                                this.Close();
+                                // ContainerForm containerForm = new ContainerForm(User);
+                                //containerForm.Show();
+                               // loginForm loginform = new loginForm();
+                                //loginform.Show();
+                                //this.Close();
                             }
                             else
                             {
@@ -93,9 +96,10 @@ namespace login_register
                         textBoxUserName.Clear();
                         textBoxUserName.Focus();
                     }
-
+                    
                     dataReader.Close();
                     DBHandler.CloseConnection(connection, command);
+                    
                 }
                 else
                 {
@@ -130,7 +134,7 @@ namespace login_register
 
         private void label6_Click(object sender, EventArgs e)
         {
-            new loginForm(User).Show();
+            new loginForm().Show();
             this.Hide();
         }
 
@@ -156,7 +160,7 @@ namespace login_register
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+           Application.Exit();
         }
     }
 }

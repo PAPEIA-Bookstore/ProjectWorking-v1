@@ -32,10 +32,151 @@ namespace login_register
             isbnLabel.Text = "ISBN: " + book.isbn;
             buyButton.Text = "Buy: " + book.price.ToString() + "€";
         }
+        private void AddReviewToUI(Review review)
+        {
+            Panel panel1 = new Panel();
 
+            panel1.BackColor = Color.FromArgb(73, 60, 52);
+            panel1.BorderStyle = BorderStyle.Fixed3D;
+            panel1.Margin = new Padding(10);
+            panel1.Name = String.Format("ReviewPanel{0}", review.id);
+            panel1.Size = new Size(375, 179);
+            panel1.TabIndex = 0;
+
+            PictureBox pfpBox = new PictureBox();
+            pfpBox.Image = Properties.Resources.book_41626;
+            pfpBox.BackColor = Color.FromArgb(73, 60, 52);
+            pfpBox.Location = new Point(9, 3);
+            pfpBox.Name = String.Format("ReviewPfpBox{0}", review.id);
+            pfpBox.Size = new Size(40, 40);
+            pfpBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            pfpBox.TabIndex = 28;
+            pfpBox.TabStop = false;
+
+            Label usernameLabel = new Label();
+            usernameLabel.AutoSize = true;
+            usernameLabel.BackColor = Color.FromArgb(73, 60, 52);
+            usernameLabel.Cursor = Cursors.Hand;
+            usernameLabel.Font = new Font("Candara", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            usernameLabel.ForeColor = Color.PapayaWhip;
+            usernameLabel.Location = new Point(55, 12);
+            usernameLabel.Name = String.Format("ReviewLabel{0}", review.id);
+            usernameLabel.Size = new Size(65, 26);
+            usernameLabel.TabIndex = 27;
+            usernameLabel.Text = review.username;
+
+            RichTextBox richTextBox1 = new RichTextBox();
+            richTextBox1.BackColor = Color.FromArgb(73, 60, 52);
+            richTextBox1.BorderStyle = BorderStyle.None;
+            richTextBox1.Font = new Font("Candara", 14.25F, FontStyle.Italic);
+            richTextBox1.ForeColor = Color.PapayaWhip;
+            richTextBox1.Location = new Point(9, 49);
+            richTextBox1.Name = String.Format("ReviewRichTextBox{0}", review.id);
+            richTextBox1.Size = new Size(346, 125);
+            richTextBox1.TabIndex = 34;
+            richTextBox1.Text = review.text;
+
+            PictureBox pictureBox1 = new PictureBox();
+            pictureBox1.Location = new Point(170, 8);
+            pictureBox1.Name = String.Format("ReviewPictureBox1{0}", review.id);
+            pictureBox1.Size = new Size(30, 30);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 33;
+            pictureBox1.TabStop = false;
+
+            PictureBox pictureBox2 = new PictureBox();
+            pictureBox2.Location = new Point(197, 8);
+            pictureBox2.Name = String.Format("ReviewPictureBox2{0}", review.id);
+            pictureBox2.Size = new Size(30, 30);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 32;
+            pictureBox2.TabStop = false;
+
+            PictureBox pictureBox3 = new PictureBox();
+            pictureBox3.Location = new Point(223, 8);
+            pictureBox3.Name = String.Format("ReviewPictureBox3{0}", review.id);
+            pictureBox3.Size = new Size(30, 30);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 31;
+            pictureBox3.TabStop = false;
+
+            PictureBox pictureBox4 = new PictureBox();
+            pictureBox4.Location = new Point(250, 8);
+            pictureBox4.Name = String.Format("ReviewPictureBox4{0}", review.id);
+            pictureBox4.Size = new Size(30, 30);
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox4.TabIndex = 30;
+            pictureBox4.TabStop = false;
+
+            PictureBox pictureBox5 = new PictureBox();
+            pictureBox5.Location = new Point(143, 8);
+            pictureBox5.Name = String.Format("ReviewPictureBox5{0}", review.id);
+            pictureBox5.Size = new Size(30, 30);
+            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox5.TabIndex = 29;
+            pictureBox5.TabStop = false;
+
+            //Αστεράκια
+            switch (review.stars)
+            {
+                case 1:
+                    pictureBox1.Image = Properties.Resources.star_filled;
+                    pictureBox2.Image = Properties.Resources.star_empty;
+                    pictureBox3.Image = Properties.Resources.star_empty;
+                    pictureBox4.Image = Properties.Resources.star_empty;
+                    pictureBox5.Image = Properties.Resources.star_empty;
+                    break;
+                case 2:
+                    pictureBox1.Image = Properties.Resources.star_filled;
+                    pictureBox2.Image = Properties.Resources.star_filled;
+                    pictureBox3.Image = Properties.Resources.star_empty;
+                    pictureBox4.Image = Properties.Resources.star_empty;
+                    pictureBox5.Image = Properties.Resources.star_empty;
+                    break;
+                case 3:
+                    pictureBox1.Image = Properties.Resources.star_filled;
+                    pictureBox2.Image = Properties.Resources.star_filled;
+                    pictureBox3.Image = Properties.Resources.star_filled;
+                    pictureBox4.Image = Properties.Resources.star_empty;
+                    pictureBox5.Image = Properties.Resources.star_empty;
+                    break;
+                case 4:
+                    pictureBox1.Image = Properties.Resources.star_filled;
+                    pictureBox2.Image = Properties.Resources.star_filled;
+                    pictureBox3.Image = Properties.Resources.star_filled;
+                    pictureBox4.Image = Properties.Resources.star_filled;
+                    pictureBox5.Image = Properties.Resources.star_empty;
+                    break;
+                case 5:
+                    pictureBox1.Image = Properties.Resources.star_filled;
+                    pictureBox2.Image = Properties.Resources.star_filled;
+                    pictureBox3.Image = Properties.Resources.star_filled;
+                    pictureBox4.Image = Properties.Resources.star_filled;
+                    pictureBox5.Image = Properties.Resources.star_filled;
+                    break;
+                default:
+                    pictureBox1.Image = Properties.Resources.star_empty;
+                    pictureBox2.Image = Properties.Resources.star_empty;
+                    pictureBox3.Image = Properties.Resources.star_empty;
+                    pictureBox4.Image = Properties.Resources.star_empty;
+                    pictureBox5.Image = Properties.Resources.star_empty;
+                    break;
+            }
+
+
+            panel1.Controls.Add(richTextBox1);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(pictureBox2);
+            panel1.Controls.Add(pictureBox3);
+            panel1.Controls.Add(pictureBox4);
+            panel1.Controls.Add(pictureBox5);
+            panel1.Controls.Add(pfpBox);
+            panel1.Controls.Add(usernameLabel);
+        }
+                                                                                                   
         private void label2_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void star1_Click(object sender, EventArgs e)

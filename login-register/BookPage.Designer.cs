@@ -37,7 +37,7 @@
             categoryLabel = new Label();
             forumButton = new Button();
             buyButton = new Button();
-            reviewsPanel = new FlowLayoutPanel();
+            reviewsFlowLayoutPanel = new FlowLayoutPanel();
             reviewsLabel = new Label();
             label1 = new Label();
             reviewText = new RichTextBox();
@@ -146,16 +146,16 @@
             buyButton.UseVisualStyleBackColor = false;
             buyButton.Click += button1_Click;
             // 
-            // reviewsPanel
+            // reviewsFlowLayoutPanel
             // 
-            reviewsPanel.AutoScroll = true;
-            reviewsPanel.BackColor = Color.FromArgb(73, 60, 52);
-            reviewsPanel.Dock = DockStyle.Bottom;
-            reviewsPanel.FlowDirection = FlowDirection.TopDown;
-            reviewsPanel.Location = new Point(0, 456);
-            reviewsPanel.Name = "reviewsPanel";
-            reviewsPanel.Size = new Size(1273, 260);
-            reviewsPanel.TabIndex = 8;
+            reviewsFlowLayoutPanel.AutoScroll = true;
+            reviewsFlowLayoutPanel.BackColor = Color.FromArgb(73, 60, 52);
+            reviewsFlowLayoutPanel.Dock = DockStyle.Bottom;
+            reviewsFlowLayoutPanel.FlowDirection = FlowDirection.TopDown;
+            reviewsFlowLayoutPanel.Location = new Point(0, 456);
+            reviewsFlowLayoutPanel.Name = "reviewsFlowLayoutPanel";
+            reviewsFlowLayoutPanel.Size = new Size(1273, 260);
+            reviewsFlowLayoutPanel.TabIndex = 8;
             // 
             // reviewsLabel
             // 
@@ -289,7 +289,7 @@
             Controls.Add(reviewText);
             Controls.Add(label1);
             Controls.Add(reviewsLabel);
-            Controls.Add(reviewsPanel);
+            Controls.Add(reviewsFlowLayoutPanel);
             Controls.Add(buyButton);
             Controls.Add(forumButton);
             Controls.Add(categoryLabel);
@@ -321,7 +321,7 @@
         private Label categoryLabel;
         private Button forumButton;
         private Button buyButton;
-        private FlowLayoutPanel reviewsPanel;
+        private FlowLayoutPanel reviewsFlowLayoutPanel;
         private Label reviewsLabel;
         private Label label1;
         private RichTextBox reviewText;
