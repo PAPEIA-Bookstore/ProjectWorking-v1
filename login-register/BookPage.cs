@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace login_register
 {
@@ -31,6 +32,13 @@ namespace login_register
             plotText.Text = book.plot;
             isbnLabel.Text = "ISBN: " + book.isbn;
             buyButton.Text = "Buy: " + book.price.ToString() + "€";
+
+            //Reviews
+            List<Review> reviews = Review.GetReviews("SELECT * FROM reviews WHERE isbn='"+book.isbn+"';");
+            for (int i = 0; i < reviews.Count; i++)
+            {
+                AddReviewToUI(reviews[i]);
+            }
         }
         private void AddReviewToUI(Review review)
         {
@@ -42,6 +50,8 @@ namespace login_register
             panel1.Name = String.Format("ReviewPanel{0}", review.id);
             panel1.Size = new Size(375, 179);
             panel1.TabIndex = 0;
+
+            reviewsFlowLayoutPanel.Controls.Add(panel1);
 
             PictureBox pfpBox = new PictureBox();
             pfpBox.Image = Properties.Resources.book_41626;
@@ -77,7 +87,7 @@ namespace login_register
             richTextBox1.Text = review.text;
 
             PictureBox pictureBox1 = new PictureBox();
-            pictureBox1.Location = new Point(170, 8);
+            pictureBox1.Location = new Point(200, 8);
             pictureBox1.Name = String.Format("ReviewPictureBox1{0}", review.id);
             pictureBox1.Size = new Size(30, 30);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -85,7 +95,7 @@ namespace login_register
             pictureBox1.TabStop = false;
 
             PictureBox pictureBox2 = new PictureBox();
-            pictureBox2.Location = new Point(197, 8);
+            pictureBox2.Location = new Point(227, 8);
             pictureBox2.Name = String.Format("ReviewPictureBox2{0}", review.id);
             pictureBox2.Size = new Size(30, 30);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -93,7 +103,7 @@ namespace login_register
             pictureBox2.TabStop = false;
 
             PictureBox pictureBox3 = new PictureBox();
-            pictureBox3.Location = new Point(223, 8);
+            pictureBox3.Location = new Point(254, 8);
             pictureBox3.Name = String.Format("ReviewPictureBox3{0}", review.id);
             pictureBox3.Size = new Size(30, 30);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -101,7 +111,7 @@ namespace login_register
             pictureBox3.TabStop = false;
 
             PictureBox pictureBox4 = new PictureBox();
-            pictureBox4.Location = new Point(250, 8);
+            pictureBox4.Location = new Point(281, 8);
             pictureBox4.Name = String.Format("ReviewPictureBox4{0}", review.id);
             pictureBox4.Size = new Size(30, 30);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -109,7 +119,7 @@ namespace login_register
             pictureBox4.TabStop = false;
 
             PictureBox pictureBox5 = new PictureBox();
-            pictureBox5.Location = new Point(143, 8);
+            pictureBox5.Location = new Point(308, 8);
             pictureBox5.Name = String.Format("ReviewPictureBox5{0}", review.id);
             pictureBox5.Size = new Size(30, 30);
             pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -234,14 +244,41 @@ namespace login_register
             string text = reviewText.Text;
             DateTime time = DateTime.Now;
             string isbn = book.isbn;    //get isbn from book here
+            /*
             NpgsqlConnection connection = DBHandler.OpenConnection();
             NpgsqlCommand command = DBHandler.GetCommand(connection);
             command.CommandText = "INSERT INTO REVIEWS(username, isbn, text, stars, time) VALUES('" + User.GetUsername() + "', '" + isbn + "', '" + text + "', " + stars + ", '" + time.ToString() + "');";
             command.ExecuteNonQuery();
             MessageBox.Show("You review has been posted!", "Thank you", MessageBoxButtons.OK, MessageBoxIcon.Information);
             DBHandler.CloseConnection(connection, command);
-        }
+            */
+            // SQL query to insert the timestamp
+            string query = "INSERT INTO reviews(username, isbn, text, stars, time) VALUES (@username, @isbn, @text, @stars, @timestamp)";
 
+            using (var connection = DBHandler.OpenConnection())
+            {
+                using (var command = new NpgsqlCommand(query, connection))
+                {
+                    // Add parameter to the query
+                    command.Parameters.AddWithValue("username", User.GetUsername());
+                    command.Parameters.AddWithValue("isbn", isbn);
+                    command.Parameters.AddWithValue("text", text);
+                    command.Parameters.AddWithValue("stars", stars);
+                    command.Parameters.AddWithValue("timestamp", time);
+
+                    // Execute the command
+                    int rowsAffected = command.ExecuteNonQuery();
+                    Console.WriteLine($"Rows affected: {rowsAffected}");
+                }
+            }
+            MessageBox.Show("You review has been posted!", "Thank you", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            List<Review> reviews = Review.GetReviews("SELECT * FROM reviews WHERE isbn='" + book.isbn + "';");
+            reviewsFlowLayoutPanel.Controls.Clear();
+            for (int i = 0; i < reviews.Count; i++)
+            {
+                AddReviewToUI(reviews[i]);
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             TransactionPage transactionPage = new TransactionPage(this.book);

@@ -188,7 +188,7 @@
             reviewText.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             reviewText.Location = new Point(782, 174);
             reviewText.Name = "reviewText";
-            reviewText.Size = new Size(319, 169);
+            reviewText.Size = new Size(428, 169);
             reviewText.TabIndex = 11;
             reviewText.Text = "";
             // 
