@@ -90,15 +90,27 @@ namespace login_register
 
         private void postReviewButton_Click(object sender, EventArgs e)
         {
-            string text = reviewText.Text;
-            DateTime time = DateTime.Now;
-            string isbn = book.isbn;    //get isbn from book here
-            NpgsqlConnection connection = DBHandler.OpenConnection();
-            NpgsqlCommand command = DBHandler.GetCommand(connection);
-            command.CommandText = "INSERT INTO REVIEWS(username, isbn, text, stars, time) VALUES('" + User.GetUsername() + "', '" + isbn + "', '" + text + "', " + stars + ", '" + time.ToString() + "');";
-            command.ExecuteNonQuery();
-            MessageBox.Show("You review has been posted!", "Thank you", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            DBHandler.CloseConnection(connection, command);
+            if (stars == 0)
+            {
+                MessageBox.Show("Please give a rating!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (String.IsNullOrWhiteSpace(reviewText.Text))
+            {
+                MessageBox.Show("Your review doesn't have any text!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                string text = reviewText.Text;
+                DateTime time = DateTime.Now;
+                string isbn = book.isbn;    //get isbn from book here
+                NpgsqlConnection connection = DBHandler.OpenConnection();
+                NpgsqlCommand command = DBHandler.GetCommand(connection);
+                command.CommandText = "INSERT INTO REVIEWS(username, isbn, text, stars, time) VALUES('" + User.GetUsername() + "', '" + isbn + "', '" + text + "', " + stars + ", '" + time.ToString() + "');";
+                command.ExecuteNonQuery();
+                MessageBox.Show("You review has been posted!", "Thank you", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DBHandler.CloseConnection(connection, command);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

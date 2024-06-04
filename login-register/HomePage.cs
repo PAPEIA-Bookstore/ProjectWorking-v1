@@ -134,9 +134,17 @@ namespace login_register
 
         private void SearchLabel_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrWhiteSpace(searchBar.Text))
+            {
+                GetBooks("SELECT * FROM books;");
+            } else
+            {
+                GetBooks("SELECT * FROM books WHERE title LIKE '%" + searchBar.Text + "%';");
+            }
             flowLayoutPanel.Controls.Clear();
-            List<Book> searchBooks = Books.Where(book => book.title.ToLower().Contains(searchBar.Text.ToLower())).ToList();
-            foreach (Book book in searchBooks)
+
+            // List<Book> searchBooks = Books.Where(book => book.title.ToLower().Contains(searchBar.Text.ToLower())).ToList();
+            foreach (Book book in Books)
             {
                 AddBookToUI(book);
             }
