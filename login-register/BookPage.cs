@@ -103,7 +103,10 @@ namespace login_register
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            TransactionPage transactionPage = new TransactionPage(this.book);
+            this.containerForm.LoadForm(transactionPage);
+            this.containerForm.Show();
+            this.Close();
         }
 
         private void forumButton_Click(object sender, EventArgs e)

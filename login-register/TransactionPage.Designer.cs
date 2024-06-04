@@ -60,7 +60,7 @@
             // 
             // paymentButton
             // 
-            paymentButton.BackColor = Color.Tan;
+            paymentButton.BackColor = Color.FromArgb(73, 60, 52);
             paymentButton.FlatStyle = FlatStyle.Flat;
             paymentButton.Font = new Font("Candara", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             paymentButton.ForeColor = Color.PapayaWhip;
@@ -141,7 +141,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.Tan;
+            panel1.BackColor = Color.FromArgb(73, 60, 52);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label4);
@@ -189,7 +189,7 @@
             // 
             // textBox1
             // 
-            textBox1.BackColor = Color.PapayaWhip;
+            textBox1.BackColor = Color.White;
             textBox1.Font = new Font("Candara", 12F);
             textBox1.Location = new Point(202, 240);
             textBox1.Name = "textBox1";
@@ -198,7 +198,7 @@
             // 
             // textBox2
             // 
-            textBox2.BackColor = Color.PapayaWhip;
+            textBox2.BackColor = Color.White;
             textBox2.Font = new Font("Candara", 12F);
             textBox2.Location = new Point(202, 269);
             textBox2.Name = "textBox2";
@@ -207,7 +207,7 @@
             // 
             // textBox3
             // 
-            textBox3.BackColor = Color.PapayaWhip;
+            textBox3.BackColor = Color.White;
             textBox3.Font = new Font("Candara", 12F);
             textBox3.Location = new Point(202, 298);
             textBox3.Name = "textBox3";
@@ -217,7 +217,7 @@
             // 
             // textBox4
             // 
-            textBox4.BackColor = Color.PapayaWhip;
+            textBox4.BackColor = Color.White;
             textBox4.Font = new Font("Candara", 12F);
             textBox4.Location = new Point(434, 298);
             textBox4.Name = "textBox4";
@@ -309,7 +309,7 @@
             // 
             // textBox6
             // 
-            textBox6.BackColor = Color.PapayaWhip;
+            textBox6.BackColor = Color.White;
             textBox6.Font = new Font("Candara", 12F);
             textBox6.Location = new Point(202, 446);
             textBox6.Name = "textBox6";
@@ -319,7 +319,7 @@
             // 
             // textBox7
             // 
-            textBox7.BackColor = Color.PapayaWhip;
+            textBox7.BackColor = Color.White;
             textBox7.Font = new Font("Candara", 12F);
             textBox7.Location = new Point(202, 417);
             textBox7.Name = "textBox7";
@@ -328,7 +328,7 @@
             // 
             // textBox8
             // 
-            textBox8.BackColor = Color.PapayaWhip;
+            textBox8.BackColor = Color.White;
             textBox8.Font = new Font("Candara", 12F);
             textBox8.Location = new Point(202, 388);
             textBox8.Name = "textBox8";

@@ -28,17 +28,31 @@ namespace login_register
          Η συνάρτηση που διαχειρίζεται το container panel (panel1)
          Δίνει στο panel1 έλεγχο στην φόρμα που δέχεται ως παράμετρο
          */
-        public void LoadForm(object Form)
+        public void LoadForm(Form form)
         {
             //if (this.panel1.Controls.Count > 0) this.panel1.Controls.RemoveAt(0);
-            
-            Form f = Form as Form;
-            f.TopLevel = false;
-            f.Dock = DockStyle.Fill;
-            this.panel1.Controls.Add(f);
-            this.panel1.Tag = f;
-            f.BringToFront();
-            f.Show();
+          if (form is HomePage)
+            {
+                Form f = form as Form;
+                f.TopLevel = false;
+                f.Dock = DockStyle.Fill;
+                this.panel1.Controls.Add(f);
+                this.panel1.Tag = f;
+                f.BringToFront();
+                f.Show();
+            }
+            else
+            {
+                if (this.panel1.Controls.Count > 0) this.panel1.Controls.RemoveAt(0);
+                Form f = form as Form;
+                f.TopLevel = false;
+                f.Dock = DockStyle.Fill;
+                this.panel1.Controls.Add(f);
+                this.panel1.Tag = f;
+                f.BringToFront();
+                f.Show();
+            }
+
         }
 
         private void usernameLabel_Click(object sender, EventArgs e)

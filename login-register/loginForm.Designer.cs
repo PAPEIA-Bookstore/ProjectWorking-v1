@@ -46,7 +46,7 @@
             label6.AutoSize = true;
             label6.Cursor = Cursors.Hand;
             label6.Font = new Font("Candara", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.Tan;
+            label6.ForeColor = Color.FromArgb(73, 60, 52);
             label6.Location = new Point(98, 444);
             label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
@@ -74,7 +74,7 @@
             buttonClearLOGIN.Cursor = Cursors.Hand;
             buttonClearLOGIN.FlatStyle = FlatStyle.Flat;
             buttonClearLOGIN.Font = new Font("Candara", 12F);
-            buttonClearLOGIN.ForeColor = Color.Tan;
+            buttonClearLOGIN.ForeColor = Color.FromArgb(73, 60, 52);
             buttonClearLOGIN.Location = new Point(49, 342);
             buttonClearLOGIN.Margin = new Padding(2);
             buttonClearLOGIN.Name = "buttonClearLOGIN";
@@ -86,7 +86,7 @@
             // 
             // buttonLOGIN
             // 
-            buttonLOGIN.BackColor = Color.Tan;
+            buttonLOGIN.BackColor = Color.FromArgb(73, 60, 52);
             buttonLOGIN.Cursor = Cursors.Hand;
             buttonLOGIN.FlatAppearance.BorderSize = 0;
             buttonLOGIN.FlatStyle = FlatStyle.Flat;
@@ -134,7 +134,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Candara", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.Tan;
+            label3.ForeColor = Color.FromArgb(73, 60, 52);
             label3.Location = new Point(46, 186);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
@@ -158,7 +158,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Candara", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.Tan;
+            label2.ForeColor = Color.FromArgb(73, 60, 52);
             label2.Location = new Point(46, 116);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
@@ -170,7 +170,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Candara", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Tan;
+            label1.ForeColor = Color.FromArgb(73, 60, 52);
             label1.Location = new Point(46, 51);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
@@ -211,7 +211,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Font = new Font("Candara", 8.25F);
-            ForeColor = Color.Tan;
+            ForeColor = Color.FromArgb(73, 60, 52);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(2);
             Name = "loginForm";

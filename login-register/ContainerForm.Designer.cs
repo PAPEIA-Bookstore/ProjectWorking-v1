@@ -43,7 +43,7 @@
             // usernameLabel
             // 
             usernameLabel.AutoSize = true;
-            usernameLabel.BackColor = Color.Tan;
+            usernameLabel.BackColor = Color.FromArgb(73, 60, 52);
             usernameLabel.Cursor = Cursors.Hand;
             usernameLabel.Font = new Font("Candara", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             usernameLabel.ForeColor = Color.PapayaWhip;
@@ -56,7 +56,7 @@
             // 
             // pfpBox
             // 
-            pfpBox.BackColor = Color.Tan;
+            pfpBox.BackColor = Color.FromArgb(73, 60, 52);
             pfpBox.Location = new Point(12, 21);
             pfpBox.Name = "pfpBox";
             pfpBox.Size = new Size(40, 40);
@@ -66,7 +66,7 @@
             // 
             // exitButton
             // 
-            exitButton.BackColor = Color.Tan;
+            exitButton.BackColor = Color.FromArgb(73, 60, 52);
             exitButton.Cursor = Cursors.Hand;
             exitButton.FlatAppearance.BorderSize = 0;
             exitButton.FlatStyle = FlatStyle.Flat;
@@ -84,14 +84,14 @@
             // 
             panel1.AutoScroll = true;
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 77);
+            panel1.Location = new Point(0, 88);
             panel1.Name = "panel1";
             panel1.Size = new Size(1273, 716);
             panel1.TabIndex = 29;
             // 
             // panel2
             // 
-            panel2.BackColor = Color.Tan;
+            panel2.BackColor = Color.FromArgb(73, 60, 52);
             panel2.Controls.Add(bookLand);
             panel2.Controls.Add(loginOrRegister);
             panel2.Controls.Add(exitButton);
@@ -100,12 +100,12 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1273, 84);
+            panel2.Size = new Size(1273, 82);
             panel2.TabIndex = 30;
             // 
             // bookLand
             // 
-            bookLand.BackColor = Color.Tan;
+            bookLand.BackColor = Color.FromArgb(73, 60, 52);
             bookLand.Cursor = Cursors.Hand;
             bookLand.Image = Properties.Resources.text_1717247010360;
             bookLand.Location = new Point(469, 21);
@@ -134,7 +134,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.PapayaWhip;
-            ClientSize = new Size(1273, 793);
+            ClientSize = new Size(1273, 804);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;

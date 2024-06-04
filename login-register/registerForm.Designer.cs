@@ -50,7 +50,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Candara", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Tan;
+            label1.ForeColor = Color.FromArgb(73, 60, 52);
             label1.Location = new Point(44, 42);
             label1.Name = "label1";
             label1.Size = new Size(234, 33);
@@ -62,7 +62,7 @@
             // 
             user_label.AutoSize = true;
             user_label.Font = new Font("Candara", 12F, FontStyle.Bold);
-            user_label.ForeColor = Color.Tan;
+            user_label.ForeColor = Color.FromArgb(73, 60, 52);
             user_label.Location = new Point(42, 102);
             user_label.Name = "user_label";
             user_label.Size = new Size(79, 19);
@@ -98,7 +98,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Candara", 12F, FontStyle.Bold);
-            label3.ForeColor = Color.Tan;
+            label3.ForeColor = Color.FromArgb(73, 60, 52);
             label3.Location = new Point(42, 227);
             label3.Name = "label3";
             label3.Size = new Size(77, 19);
@@ -121,7 +121,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Candara", 12F, FontStyle.Bold);
-            label4.ForeColor = Color.Tan;
+            label4.ForeColor = Color.FromArgb(73, 60, 52);
             label4.Location = new Point(42, 293);
             label4.Name = "label4";
             label4.Size = new Size(135, 19);
@@ -144,7 +144,7 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.Tan;
+            button1.BackColor = Color.FromArgb(73, 60, 52);
             button1.Cursor = Cursors.Hand;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
@@ -163,7 +163,7 @@
             button2.BackColor = Color.PapayaWhip;
             button2.Cursor = Cursors.Hand;
             button2.FlatStyle = FlatStyle.Flat;
-            button2.ForeColor = Color.Tan;
+            button2.ForeColor = Color.FromArgb(73, 60, 52);
             button2.Location = new Point(44, 485);
             button2.Name = "button2";
             button2.Size = new Size(243, 39);
@@ -187,7 +187,7 @@
             label6.AutoSize = true;
             label6.Cursor = Cursors.Hand;
             label6.Font = new Font("Candara", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.Tan;
+            label6.ForeColor = Color.FromArgb(73, 60, 52);
             label6.Location = new Point(107, 577);
             label6.Name = "label6";
             label6.Size = new Size(126, 23);
@@ -210,7 +210,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Candara", 12F, FontStyle.Bold);
-            label7.ForeColor = Color.Tan;
+            label7.ForeColor = Color.FromArgb(73, 60, 52);
             label7.Location = new Point(42, 165);
             label7.Name = "label7";
             label7.Size = new Size(77, 19);
@@ -224,7 +224,7 @@
             authorCheckBox.Cursor = Cursors.Hand;
             authorCheckBox.FlatStyle = FlatStyle.Flat;
             authorCheckBox.Font = new Font("Candara", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            authorCheckBox.ForeColor = Color.Tan;
+            authorCheckBox.ForeColor = Color.FromArgb(73, 60, 52);
             authorCheckBox.Location = new Point(44, 383);
             authorCheckBox.Name = "authorCheckBox";
             authorCheckBox.Size = new Size(127, 23);
@@ -234,9 +234,11 @@
             // 
             // button3
             // 
+            button3.Cursor = Cursors.Hand;
             button3.FlatAppearance.BorderColor = Color.Tan;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Candara", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.ForeColor = Color.FromArgb(73, 60, 52);
             button3.Location = new Point(290, 11);
             button3.Margin = new Padding(2);
             button3.Name = "button3";

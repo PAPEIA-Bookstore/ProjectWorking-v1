@@ -90,11 +90,16 @@
             // 
             // comboBox1
             // 
+            comboBox1.BackColor = Color.PapayaWhip;
+            comboBox1.FlatStyle = FlatStyle.Flat;
+            comboBox1.Font = new Font("Candara", 14.25F);
             comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Title", "Author", "Price" });
             comboBox1.Location = new Point(39, 403);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
+            comboBox1.Size = new Size(121, 31);
             comboBox1.TabIndex = 0;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // label_sort
             // 

@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.ConstrainedExecution;
 using System.Text;
@@ -32,7 +33,7 @@ namespace login_register
             panel = new Panel();
             panel.Name = String.Format("BookPanel{0}", book.isbn);
             panel.BackColor = Color.PapayaWhip;
-            panel.Size = new Size(125, 205);
+            panel.Size = new Size(125, 230);
             panel.Margin = new Padding(10);
             panel.Tag = book.isbn;
 
@@ -72,10 +73,21 @@ namespace login_register
             authorLabel.Font = new Font("Candara", 10f, FontStyle.Regular);
             authorLabel.Tag = book.isbn;
 
+            //Create price label
+            Label bookPriceLabel;
+            bookPriceLabel = new Label();
+            bookPriceLabel.Name = String.Format("bookPriceLabel{0}", book.isbn);
+            bookPriceLabel.Text = book.price.ToString(CultureInfo.InvariantCulture);
+            bookPriceLabel.Location = new Point(12, 205);
+            bookPriceLabel.ForeColor = Color.Black;
+            bookPriceLabel.Font = new Font("Candara", 10f, FontStyle.Regular);
+            bookPriceLabel.Tag = book.isbn;
+
             //Add controls to panel
             panel.Controls.Add(picBox);
             panel.Controls.Add(titleLabel);
             panel.Controls.Add(authorLabel);
+            panel.Controls.Add(bookPriceLabel);
 
 
         }
@@ -136,6 +148,41 @@ namespace login_register
         private void HomePage_Load(object sender, EventArgs e)
         {
             this.GetBooks("SELECT * FROM books;");
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Books.Count == 0)
+            {
+                MessageBox.Show("The search bar is empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            flowLayoutPanel.Controls.Clear();
+
+            switch (comboBox1.SelectedIndex)
+            {
+                case 0:
+                    Books = Books.OrderBy(book => book.title).ToList();
+                    for (int i = 0; i < Books.Count; i++)
+                    {
+                        AddBookToUI(Books[i]);
+                    }
+                    break;
+                case 1:
+                    Books = Books.OrderBy(book => book.author).ToList();
+                    for (int i = 0; i < Books.Count; i++)
+                    {
+                        AddBookToUI(Books[i]);
+                    }
+                    break;
+                default:
+                    Books = Books.OrderBy(book => book.price).ToList();
+                    for (int i = 0; i < Books.Count; i++)
+                    {
+                        AddBookToUI(Books[i]);
+                    }
+                    break;
+            }
+
         }
     }
 }
