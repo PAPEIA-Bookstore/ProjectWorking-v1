@@ -236,24 +236,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\chmas\\.nuget\\packages\\": {}
+    "C:\\Users\\theod\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\chmas\\Source\\Repos\\ProjectWorking-v1\\login-register\\login-register.csproj",
+      "projectUniqueName": "E:\\Repos\\Project-working-v1\\login-register\\login-register.csproj",
       "projectName": "login-register",
-      "projectPath": "C:\\Users\\chmas\\Source\\Repos\\ProjectWorking-v1\\login-register\\login-register.csproj",
-      "packagesPath": "C:\\Users\\chmas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\chmas\\Source\\Repos\\ProjectWorking-v1\\login-register\\obj\\",
+      "projectPath": "E:\\Repos\\Project-working-v1\\login-register\\login-register.csproj",
+      "packagesPath": "C:\\Users\\theod\\.nuget\\packages\\",
+      "outputPath": "E:\\Repos\\Project-working-v1\\login-register\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\chmas\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\theod\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0-windows"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

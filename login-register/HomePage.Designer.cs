@@ -77,6 +77,7 @@
             splitContainer1.Panel1.Controls.Add(label_scifi);
             splitContainer1.Panel1.Controls.Add(label_horror);
             splitContainer1.Panel1.Controls.Add(categoriesLabel);
+            splitContainer1.Panel1.Cursor = Cursors.Hand;
             // 
             // splitContainer1.Panel2
             // 
@@ -84,8 +85,8 @@
             splitContainer1.Panel2.Controls.Add(flowLayoutPanel);
             splitContainer1.Panel2.Controls.Add(searchBar);
             splitContainer1.Panel2.Controls.Add(SearchLabel);
-            splitContainer1.Size = new Size(1160, 704);
-            splitContainer1.SplitterDistance = 228;
+            splitContainer1.Size = new Size(1273, 716);
+            splitContainer1.SplitterDistance = 250;
             splitContainer1.TabIndex = 21;
             // 
             // comboBox1
@@ -95,7 +96,7 @@
             comboBox1.Font = new Font("Candara", 14.25F);
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Title", "Author", "Price" });
-            comboBox1.Location = new Point(39, 403);
+            comboBox1.Location = new Point(42, 403);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 31);
             comboBox1.TabIndex = 0;
@@ -140,10 +141,12 @@
             label_mystery.Size = new Size(66, 21);
             label_mystery.TabIndex = 41;
             label_mystery.Text = "Mystery";
+            label_mystery.Click += label_mystery_Click;
             // 
             // label_romance
             // 
             label_romance.AutoSize = true;
+            label_romance.Cursor = Cursors.Hand;
             label_romance.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label_romance.ForeColor = Color.White;
             label_romance.Location = new Point(39, 137);
@@ -151,10 +154,12 @@
             label_romance.Size = new Size(75, 21);
             label_romance.TabIndex = 40;
             label_romance.Text = "Romance";
+            label_romance.Click += label_romance_Click;
             // 
             // label_scifi
             // 
             label_scifi.AutoSize = true;
+            label_scifi.Cursor = Cursors.Hand;
             label_scifi.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label_scifi.ForeColor = Color.White;
             label_scifi.Location = new Point(39, 101);
@@ -162,10 +167,12 @@
             label_scifi.Size = new Size(112, 21);
             label_scifi.TabIndex = 39;
             label_scifi.Text = "Science Fiction";
+            label_scifi.Click += label_scifi_Click;
             // 
             // label_horror
             // 
             label_horror.AutoSize = true;
+            label_horror.Cursor = Cursors.Hand;
             label_horror.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label_horror.ForeColor = Color.White;
             label_horror.Location = new Point(39, 66);
@@ -173,6 +180,7 @@
             label_horror.Size = new Size(57, 21);
             label_horror.TabIndex = 37;
             label_horror.Text = "Horror";
+            label_horror.Click += label_horror_Click;
             // 
             // categoriesLabel
             // 
@@ -203,7 +211,7 @@
             // 
             flowLayoutPanel.Location = new Point(3, 66);
             flowLayoutPanel.Name = "flowLayoutPanel";
-            flowLayoutPanel.Size = new Size(913, 626);
+            flowLayoutPanel.Size = new Size(1004, 626);
             flowLayoutPanel.TabIndex = 41;
             // 
             // searchBar
@@ -232,7 +240,7 @@
             AutoScaleMode = AutoScaleMode.None;
             AutoSize = true;
             BackColor = Color.PapayaWhip;
-            ClientSize = new Size(1160, 704);
+            ClientSize = new Size(1273, 716);
             Controls.Add(splitContainer1);
             Controls.Add(pictureBox9);
             ForeColor = Color.Black;

@@ -11,6 +11,7 @@ using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Reflection.Metadata.BlobBuilder;
 
 namespace login_register
 {
@@ -134,14 +135,10 @@ namespace login_register
         private void SearchLabel_Click(object sender, EventArgs e)
         {
             flowLayoutPanel.Controls.Clear();
-            if (String.IsNullOrWhiteSpace(searchBar.Text))
+            List<Book> searchBooks = Books.Where(book => book.title.ToLower().Contains(searchBar.Text.ToLower())).ToList();
+            foreach (Book book in searchBooks)
             {
-                // MessageBox.Show("The search bar is empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.GetBooks("SELECT * FROM books;");
-            }
-            else
-            {
-                this.GetBooks("SELECT * FROM books WHERE title like '%" + searchBar.Text + "%';");
+                AddBookToUI(book);
             }
         }
 
@@ -183,6 +180,46 @@ namespace login_register
                     break;
             }
 
+        }
+
+        private void label_horror_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel.Controls.Clear();
+            List<Book> horrorBooks = Books.FindAll(book => book.category == "Horror");
+            foreach (Book book in horrorBooks)
+            {
+                AddBookToUI(book);
+            }
+        }
+
+        private void label_scifi_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel.Controls.Clear();
+            List<Book> scifiBooks = Books.FindAll(book => book.category == "Science Fiction");
+            foreach (Book book in scifiBooks)
+            {
+                AddBookToUI(book);
+            }
+        }
+
+        private void label_romance_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel.Controls.Clear();
+            List<Book> romBooks = Books.FindAll(book => book.category == "Romance");
+            foreach (Book book in romBooks)
+            {
+                AddBookToUI(book);
+            }
+        }
+
+        private void label_mystery_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel.Controls.Clear();
+            List<Book> mystBooks = Books.FindAll(book => book.category == "Mystery");
+            foreach (Book book in mystBooks)
+            {
+                AddBookToUI(book);
+            }
         }
     }
 }

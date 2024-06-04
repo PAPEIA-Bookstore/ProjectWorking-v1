@@ -73,7 +73,7 @@
             profCover.Image = Properties.Resources.profCover;
             profCover.Location = new Point(0, -3);
             profCover.Name = "profCover";
-            profCover.Size = new Size(1089, 218);
+            profCover.Size = new Size(1273, 218);
             profCover.SizeMode = PictureBoxSizeMode.StretchImage;
             profCover.TabIndex = 4;
             profCover.TabStop = false;
@@ -83,7 +83,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Tan;
-            ClientSize = new Size(1089, 602);
+            ClientSize = new Size(1273, 716);
             Controls.Add(profCover);
             Controls.Add(usernameLabel);
             Controls.Add(fullNameLabel);

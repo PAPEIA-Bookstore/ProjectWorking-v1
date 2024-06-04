@@ -84,9 +84,9 @@
             // 
             panel1.AutoScroll = true;
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 88);
+            panel1.Location = new Point(0, 77);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1273, 716);
+            panel1.Size = new Size(1273, 727);
             panel1.TabIndex = 29;
             // 
             // panel2

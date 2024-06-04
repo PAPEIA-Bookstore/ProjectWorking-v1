@@ -55,8 +55,6 @@ namespace login_register
                         if (isMatch)
                         {
 
-                            MessageBox.Show("Welcome " + textBoxUserName.Text + "!", "Login Successfull!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                             User.SetUsername(textBoxUserName.Text);
                             User.SetFullName(dataReader.GetString(1));
                             User.SetProfilePic(dataReader.GetString(4));

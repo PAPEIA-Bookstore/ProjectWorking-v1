@@ -31,7 +31,6 @@ namespace login_register
                     NpgsqlDataReader dataReader = command.ExecuteReader();
 
                     bool usernameExists = dataReader.HasRows;
-                    dataReader.Close();
                     //  Check for username uniqueness
                     if (!usernameExists)
                     {
@@ -61,7 +60,6 @@ namespace login_register
                                 textBoxConfPassword.Clear();
 
                                 MessageBox.Show("Your account has been successfully created!", "Registration Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                DBHandler.CloseConnection(connection, command);
 
                                 User.SetUsername(username);
                                 User.SetFullName(fullName);
