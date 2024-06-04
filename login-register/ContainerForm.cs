@@ -14,13 +14,15 @@ namespace login_register
     public partial class ContainerForm : Form
     {
         private User User;
+        private HomePage homePage;
         public ContainerForm(User User)
         {
             InitializeComponent();
             this.User = User;
             pfpBox.Load(User.GetProfilePic());
             usernameLabel.Text = "@" + User.GetUsername();
-            LoadForm(new HomePage(this));
+            this.homePage = new HomePage(this);
+            LoadForm(homePage);
         }
         /*
          Η συνάρτηση που διαχειρίζεται το container panel (panel1)
@@ -28,12 +30,14 @@ namespace login_register
          */
         public void LoadForm(object Form)
         {
-            if (this.panel1.Controls.Count > 0) this.panel1.Controls.RemoveAt(0);
+            //if (this.panel1.Controls.Count > 0) this.panel1.Controls.RemoveAt(0);
+            
             Form f = Form as Form;
             f.TopLevel = false;
             f.Dock = DockStyle.Fill;
             this.panel1.Controls.Add(f);
             this.panel1.Tag = f;
+            f.BringToFront();
             f.Show();
         }
 
@@ -64,7 +68,9 @@ namespace login_register
 
         private void bookLand_Click(object sender, EventArgs e)
         {
-            LoadForm(new HomePage(this));
+            //LoadForm(new HomePage(this));
+            LoadForm(this.homePage);
+
         }
     }
 }

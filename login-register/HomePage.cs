@@ -80,13 +80,13 @@ namespace login_register
 
         }
 
-        //opens pic
+        //opens BookPage
         private void PicBox_Click(object sender, EventArgs e, Book book)
         {
             BookPage bp = new BookPage(book, this.containerForm);
             this.containerForm.LoadForm(bp);
             this.containerForm.Show();
-            this.Close();
+            //this.Close();
         }
 
         private void GetBooks(string query)
@@ -106,10 +106,9 @@ namespace login_register
 
                 }
 
-                while (Books.Count > 0)
+                for (int i = 0; i < Books.Count; i++)
                 {
-                    AddBookToUI(Books[0]);
-                    Books.RemoveAt(0);
+                    AddBookToUI(Books[i]);
                 }
             }
             else
