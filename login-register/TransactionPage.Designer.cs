@@ -40,10 +40,10 @@
             authorTextBox = new TextBox();
             isbnTextBox = new TextBox();
             priceTextBox = new TextBox();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            cardNumberTextBox = new TextBox();
+            cardOwnerTextBox = new TextBox();
+            CVVTextBox = new TextBox();
+            expirationDateTextBox = new TextBox();
             label3 = new Label();
             label6 = new Label();
             label7 = new Label();
@@ -52,9 +52,9 @@
             label12 = new Label();
             label13 = new Label();
             label14 = new Label();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
-            textBox8 = new TextBox();
+            postalCodeTextBox = new TextBox();
+            cityTextBox = new TextBox();
+            roadNumberTextBox = new TextBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -64,7 +64,7 @@
             paymentButton.FlatStyle = FlatStyle.Flat;
             paymentButton.Font = new Font("Candara", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             paymentButton.ForeColor = Color.PapayaWhip;
-            paymentButton.Location = new Point(772, 482);
+            paymentButton.Location = new Point(950, 592);
             paymentButton.Name = "paymentButton";
             paymentButton.Size = new Size(215, 40);
             paymentButton.TabIndex = 0;
@@ -122,7 +122,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Candara", 14.25F, FontStyle.Bold);
             label5.ForeColor = Color.PapayaWhip;
-            label5.Location = new Point(819, 9);
+            label5.Location = new Point(888, 11);
             label5.Name = "label5";
             label5.Size = new Size(51, 23);
             label5.TabIndex = 5;
@@ -146,83 +146,87 @@
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label5);
-            panel1.Location = new Point(60, 103);
+            panel1.Location = new Point(62, 93);
             panel1.Name = "panel1";
-            panel1.Size = new Size(927, 41);
+            panel1.Size = new Size(1103, 41);
             panel1.TabIndex = 12;
             // 
             // titleTextBox
             // 
-            titleTextBox.BackColor = Color.PapayaWhip;
+            titleTextBox.BackColor = Color.White;
+            titleTextBox.BorderStyle = BorderStyle.FixedSingle;
             titleTextBox.Font = new Font("Candara", 12F);
-            titleTextBox.Location = new Point(60, 140);
+            titleTextBox.Location = new Point(62, 130);
             titleTextBox.Name = "titleTextBox";
             titleTextBox.Size = new Size(342, 27);
             titleTextBox.TabIndex = 13;
             // 
             // authorTextBox
             // 
-            authorTextBox.BackColor = Color.PapayaWhip;
+            authorTextBox.BackColor = Color.White;
+            authorTextBox.BorderStyle = BorderStyle.FixedSingle;
             authorTextBox.Font = new Font("Candara", 12F);
-            authorTextBox.Location = new Point(401, 140);
+            authorTextBox.Location = new Point(403, 130);
             authorTextBox.Name = "authorTextBox";
             authorTextBox.Size = new Size(244, 27);
             authorTextBox.TabIndex = 14;
             // 
             // isbnTextBox
             // 
-            isbnTextBox.BackColor = Color.PapayaWhip;
+            isbnTextBox.BackColor = Color.White;
+            isbnTextBox.BorderStyle = BorderStyle.FixedSingle;
             isbnTextBox.Font = new Font("Candara", 12F);
-            isbnTextBox.Location = new Point(643, 140);
+            isbnTextBox.Location = new Point(645, 130);
             isbnTextBox.Name = "isbnTextBox";
-            isbnTextBox.Size = new Size(239, 27);
+            isbnTextBox.Size = new Size(306, 27);
             isbnTextBox.TabIndex = 15;
             // 
             // priceTextBox
             // 
-            priceTextBox.BackColor = Color.PapayaWhip;
+            priceTextBox.BackColor = Color.White;
+            priceTextBox.BorderStyle = BorderStyle.FixedSingle;
             priceTextBox.Font = new Font("Candara", 12F);
-            priceTextBox.Location = new Point(879, 140);
+            priceTextBox.Location = new Point(950, 130);
             priceTextBox.Name = "priceTextBox";
-            priceTextBox.Size = new Size(108, 27);
+            priceTextBox.Size = new Size(215, 27);
             priceTextBox.TabIndex = 16;
             // 
-            // textBox1
+            // cardNumberTextBox
             // 
-            textBox1.BackColor = Color.White;
-            textBox1.Font = new Font("Candara", 12F);
-            textBox1.Location = new Point(202, 240);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(332, 27);
-            textBox1.TabIndex = 17;
+            cardNumberTextBox.BackColor = Color.White;
+            cardNumberTextBox.Font = new Font("Candara", 12F);
+            cardNumberTextBox.Location = new Point(202, 240);
+            cardNumberTextBox.Name = "cardNumberTextBox";
+            cardNumberTextBox.Size = new Size(332, 27);
+            cardNumberTextBox.TabIndex = 17;
             // 
-            // textBox2
+            // cardOwnerTextBox
             // 
-            textBox2.BackColor = Color.White;
-            textBox2.Font = new Font("Candara", 12F);
-            textBox2.Location = new Point(202, 269);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(332, 27);
-            textBox2.TabIndex = 18;
+            cardOwnerTextBox.BackColor = Color.White;
+            cardOwnerTextBox.Font = new Font("Candara", 12F);
+            cardOwnerTextBox.Location = new Point(202, 269);
+            cardOwnerTextBox.Name = "cardOwnerTextBox";
+            cardOwnerTextBox.Size = new Size(332, 27);
+            cardOwnerTextBox.TabIndex = 18;
             // 
-            // textBox3
+            // CVVTextBox
             // 
-            textBox3.BackColor = Color.White;
-            textBox3.Font = new Font("Candara", 12F);
-            textBox3.Location = new Point(202, 298);
-            textBox3.Name = "textBox3";
-            textBox3.PasswordChar = '*';
-            textBox3.Size = new Size(89, 27);
-            textBox3.TabIndex = 19;
+            CVVTextBox.BackColor = Color.White;
+            CVVTextBox.Font = new Font("Candara", 12F);
+            CVVTextBox.Location = new Point(202, 298);
+            CVVTextBox.Name = "CVVTextBox";
+            CVVTextBox.PasswordChar = '*';
+            CVVTextBox.Size = new Size(89, 27);
+            CVVTextBox.TabIndex = 19;
             // 
-            // textBox4
+            // expirationDateTextBox
             // 
-            textBox4.BackColor = Color.White;
-            textBox4.Font = new Font("Candara", 12F);
-            textBox4.Location = new Point(434, 298);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 27);
-            textBox4.TabIndex = 20;
+            expirationDateTextBox.BackColor = Color.White;
+            expirationDateTextBox.Font = new Font("Candara", 12F);
+            expirationDateTextBox.Location = new Point(434, 298);
+            expirationDateTextBox.Name = "expirationDateTextBox";
+            expirationDateTextBox.Size = new Size(100, 27);
+            expirationDateTextBox.TabIndex = 20;
             // 
             // label3
             // 
@@ -307,55 +311,54 @@
             label14.TabIndex = 30;
             label14.Text = "Road, Number";
             // 
-            // textBox6
+            // postalCodeTextBox
             // 
-            textBox6.BackColor = Color.White;
-            textBox6.Font = new Font("Candara", 12F);
-            textBox6.Location = new Point(202, 446);
-            textBox6.Name = "textBox6";
-            textBox6.PasswordChar = '*';
-            textBox6.Size = new Size(89, 27);
-            textBox6.TabIndex = 28;
+            postalCodeTextBox.BackColor = Color.White;
+            postalCodeTextBox.Font = new Font("Candara", 12F);
+            postalCodeTextBox.Location = new Point(202, 446);
+            postalCodeTextBox.Name = "postalCodeTextBox";
+            postalCodeTextBox.Size = new Size(89, 27);
+            postalCodeTextBox.TabIndex = 28;
             // 
-            // textBox7
+            // cityTextBox
             // 
-            textBox7.BackColor = Color.White;
-            textBox7.Font = new Font("Candara", 12F);
-            textBox7.Location = new Point(202, 417);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(332, 27);
-            textBox7.TabIndex = 27;
+            cityTextBox.BackColor = Color.White;
+            cityTextBox.Font = new Font("Candara", 12F);
+            cityTextBox.Location = new Point(202, 417);
+            cityTextBox.Name = "cityTextBox";
+            cityTextBox.Size = new Size(332, 27);
+            cityTextBox.TabIndex = 27;
             // 
-            // textBox8
+            // roadNumberTextBox
             // 
-            textBox8.BackColor = Color.White;
-            textBox8.Font = new Font("Candara", 12F);
-            textBox8.Location = new Point(202, 388);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(332, 27);
-            textBox8.TabIndex = 26;
+            roadNumberTextBox.BackColor = Color.White;
+            roadNumberTextBox.Font = new Font("Candara", 12F);
+            roadNumberTextBox.Location = new Point(202, 388);
+            roadNumberTextBox.Name = "roadNumberTextBox";
+            roadNumberTextBox.Size = new Size(332, 27);
+            roadNumberTextBox.TabIndex = 26;
             // 
             // TransactionPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.PapayaWhip;
-            ClientSize = new Size(1073, 566);
+            ClientSize = new Size(1273, 716);
             Controls.Add(label12);
             Controls.Add(label13);
             Controls.Add(label14);
-            Controls.Add(textBox6);
-            Controls.Add(textBox7);
-            Controls.Add(textBox8);
+            Controls.Add(postalCodeTextBox);
+            Controls.Add(cityTextBox);
+            Controls.Add(roadNumberTextBox);
             Controls.Add(label11);
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label3);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(expirationDateTextBox);
+            Controls.Add(CVVTextBox);
+            Controls.Add(cardOwnerTextBox);
+            Controls.Add(cardNumberTextBox);
             Controls.Add(priceTextBox);
             Controls.Add(isbnTextBox);
             Controls.Add(authorTextBox);
@@ -387,10 +390,10 @@
         private TextBox authorTextBox;
         private TextBox isbnTextBox;
         private TextBox priceTextBox;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private TextBox cardNumberTextBox;
+        private TextBox cardOwnerTextBox;
+        private TextBox CVVTextBox;
+        private TextBox expirationDateTextBox;
         private Label label3;
         private Label label6;
         private Label label7;
@@ -399,8 +402,8 @@
         private Label label12;
         private Label label13;
         private Label label14;
-        private TextBox textBox6;
-        private TextBox textBox7;
-        private TextBox textBox8;
+        private TextBox postalCodeTextBox;
+        private TextBox cityTextBox;
+        private TextBox roadNumberTextBox;
     }
 }

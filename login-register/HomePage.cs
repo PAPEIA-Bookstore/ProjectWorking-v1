@@ -184,5 +184,45 @@ namespace login_register
             }
 
         }
+
+        private void label_scifi_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel.Controls.Clear();
+            List<Book> scifiBooks = Books.FindAll(book => book.category == "Science Fiction");
+            foreach (Book book in scifiBooks)
+            {
+                AddBookToUI(book);
+            }
+        }
+
+        private void label_romance_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel.Controls.Clear();
+            List<Book> romBooks = Books.FindAll(book => book.category == "Romance");
+            foreach (Book book in romBooks)
+            {
+                AddBookToUI(book);
+            }
+        }
+
+        private void label_mystery_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel.Controls.Clear();
+            List<Book> mystBooks = Books.FindAll(book => book.category == "Mystery");
+            foreach (Book book in mystBooks)
+            {
+                AddBookToUI(book);
+            }
+        }
+
+        private void label_horror_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel.Controls.Clear();
+            List<Book> horrorBooks = Books.FindAll(book => book.category == "Horror");
+            foreach (Book book in horrorBooks)
+            {
+                AddBookToUI(book);
+            }
+        }
     }
 }

@@ -48,12 +48,14 @@
             star4 = new PictureBox();
             star3 = new PictureBox();
             star2 = new PictureBox();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)coverPictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)star1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)star5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)star4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)star3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)star2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // coverPictureBox
@@ -272,6 +274,15 @@
             star2.TabStop = false;
             star2.Click += star2_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.FromArgb(73, 60, 52);
+            pictureBox1.Location = new Point(726, -5);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(3, 474);
+            pictureBox1.TabIndex = 19;
+            pictureBox1.TabStop = false;
+            // 
             // BookPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -298,6 +309,7 @@
             Controls.Add(plotText);
             Controls.Add(bookTitle);
             Controls.Add(coverPictureBox);
+            Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "BookPage";
             Text = "BookPage";
@@ -307,6 +319,7 @@
             ((System.ComponentModel.ISupportInitialize)star4).EndInit();
             ((System.ComponentModel.ISupportInitialize)star3).EndInit();
             ((System.ComponentModel.ISupportInitialize)star2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -332,5 +345,6 @@
         private PictureBox star4;
         private PictureBox star3;
         private PictureBox star2;
+        private PictureBox pictureBox1;
     }
 }

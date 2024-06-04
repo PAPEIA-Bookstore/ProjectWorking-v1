@@ -140,6 +140,7 @@
             label_mystery.Size = new Size(66, 21);
             label_mystery.TabIndex = 41;
             label_mystery.Text = "Mystery";
+            label_mystery.Click += label_mystery_Click;
             // 
             // label_romance
             // 
@@ -151,6 +152,7 @@
             label_romance.Size = new Size(75, 21);
             label_romance.TabIndex = 40;
             label_romance.Text = "Romance";
+            label_romance.Click += label_romance_Click;
             // 
             // label_scifi
             // 
@@ -162,6 +164,7 @@
             label_scifi.Size = new Size(112, 21);
             label_scifi.TabIndex = 39;
             label_scifi.Text = "Science Fiction";
+            label_scifi.Click += label_scifi_Click;
             // 
             // label_horror
             // 
@@ -173,6 +176,7 @@
             label_horror.Size = new Size(57, 21);
             label_horror.TabIndex = 37;
             label_horror.Text = "Horror";
+            label_horror.Click += label_horror_Click;
             // 
             // categoriesLabel
             // 

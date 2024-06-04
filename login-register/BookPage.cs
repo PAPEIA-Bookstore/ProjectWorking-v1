@@ -241,44 +241,48 @@ namespace login_register
 
         private void postReviewButton_Click(object sender, EventArgs e)
         {
-            string text = reviewText.Text;
-            DateTime time = DateTime.Now;
-            string isbn = book.isbn;    //get isbn from book here
-            /*
-            NpgsqlConnection connection = DBHandler.OpenConnection();
-            NpgsqlCommand command = DBHandler.GetCommand(connection);
-            command.CommandText = "INSERT INTO REVIEWS(username, isbn, text, stars, time) VALUES('" + User.GetUsername() + "', '" + isbn + "', '" + text + "', " + stars + ", '" + time.ToString() + "');";
-            command.ExecuteNonQuery();
-            MessageBox.Show("You review has been posted!", "Thank you", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            DBHandler.CloseConnection(connection, command);
-            */
-            // SQL query to insert the timestamp
-            string query = "INSERT INTO reviews(username, isbn, text, stars, time) VALUES (@username, @isbn, @text, @stars, @timestamp)";
-
-            using (var connection = DBHandler.OpenConnection())
+            if (stars == 0)
             {
-                using (var command = new NpgsqlCommand(query, connection))
-                {
-                    // Add parameter to the query
-                    command.Parameters.AddWithValue("username", User.GetUsername());
-                    command.Parameters.AddWithValue("isbn", isbn);
-                    command.Parameters.AddWithValue("text", text);
-                    command.Parameters.AddWithValue("stars", stars);
-                    command.Parameters.AddWithValue("timestamp", time);
+                MessageBox.Show("Please give a rating!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (String.IsNullOrWhiteSpace(reviewText.Text))
+            {
+                MessageBox.Show("Your review doesn't have any text!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                    // Execute the command
-                    int rowsAffected = command.ExecuteNonQuery();
-                    Console.WriteLine($"Rows affected: {rowsAffected}");
+            }
+            else
+            {
+                string text = reviewText.Text;
+                DateTime time = DateTime.Now;
+                string isbn = book.isbn;    //get isbn from book here
+
+                string query = "INSERT INTO reviews(username, isbn, text, stars, time) VALUES (@username, @isbn, @text, @stars, @timestamp)";
+
+                using (var connection = DBHandler.OpenConnection())
+                {
+                    using (var command = new NpgsqlCommand(query, connection))
+                    {
+                        // Add parameter to the query
+                        command.Parameters.AddWithValue("username", User.GetUsername());
+                        command.Parameters.AddWithValue("isbn", isbn);
+                        command.Parameters.AddWithValue("text", text);
+                        command.Parameters.AddWithValue("stars", stars);
+                        command.Parameters.AddWithValue("timestamp", time);
+
+                        // Execute the command
+                        int rowsAffected = command.ExecuteNonQuery();
+                        Console.WriteLine($"Rows affected: {rowsAffected}");
+                    }
+                }
+                MessageBox.Show("You review has been posted!", "Thank you", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                List<Review> reviews = Review.GetReviews("SELECT * FROM reviews WHERE isbn='" + book.isbn + "';");
+                reviewsFlowLayoutPanel.Controls.Clear();
+                for (int i = 0; i < reviews.Count; i++)
+                {
+                    AddReviewToUI(reviews[i]);
                 }
             }
-            MessageBox.Show("You review has been posted!", "Thank you", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            List<Review> reviews = Review.GetReviews("SELECT * FROM reviews WHERE isbn='" + book.isbn + "';");
-            reviewsFlowLayoutPanel.Controls.Clear();
-            for (int i = 0; i < reviews.Count; i++)
-            {
-                AddReviewToUI(reviews[i]);
             }
-        }
         private void button1_Click(object sender, EventArgs e)
         {
             TransactionPage transactionPage = new TransactionPage(this.book);

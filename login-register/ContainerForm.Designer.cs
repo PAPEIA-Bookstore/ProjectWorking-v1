@@ -84,7 +84,7 @@
             // 
             panel1.AutoScroll = true;
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 88);
+            panel1.Location = new Point(0, 82);
             panel1.Name = "panel1";
             panel1.Size = new Size(1273, 716);
             panel1.TabIndex = 29;
@@ -134,7 +134,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.PapayaWhip;
-            ClientSize = new Size(1273, 804);
+            ClientSize = new Size(1273, 798);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
